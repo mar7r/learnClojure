@@ -1,7 +1,7 @@
 (ns nzb.core-test
   (:use clojure.test
         nzb.core)
-  (:require [clojure.java.io as io]))
+  (:require [clojure.java.io :as io]))
 
 (deftest test-nzb->map
   (let [input (io/resource "example.nzb")]
