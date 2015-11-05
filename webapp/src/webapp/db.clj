@@ -21,7 +21,7 @@
                              (sql/with-query-results res
                                                              ["select x, y from locations where id = ?" loc-id]
                                                              (doall res)))]
-    (assert (= (count result) 1))
+    (assert (= (count results) 1))
     (first results)))
 
 (defn get-all-locations
@@ -29,5 +29,5 @@
   (let [results (sql/with-connection db-spec
                                      (sql/with-query-results res
                                                              ["select id, x, y from locations"]
-                                                             (do all res)))]
+                                                             (doall res)))]
     results))

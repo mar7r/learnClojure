@@ -28,8 +28,7 @@
 (def app
   handler/site app-routes)
 
-(defn -main
-  [& [port]]
+(defn -main [& [port]]
   (let [port (Integer . (or port
                               (System/getenv "PORT")
                               5000))]
